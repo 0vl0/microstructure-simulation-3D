@@ -2,7 +2,7 @@
 
 This repository includes python files to: 
   * generate a dataset of 3D voxel microstructures and compute mechanical response ([FileManager.py](FileManager.py), [generate_db_micro.py](generate_db_micro.py)).
-  * 3D plotting the microstructures, leveraging the GPU with [vispy](https://vispy.org/) ([plot_2_micro_lines.py](plot_2_micro_lines.py), [plot_2_shapes_microstructure.py](plot_2_shapes_microstructure.py))
+  * 3D plot the microstructures, leveraging the GPU with [vispy](https://vispy.org/) ([plot_2_micro_lines.py](plot_2_micro_lines.py), [plot_2_shapes_microstructure.py](plot_2_shapes_microstructure.py))
   * predicting the mechanical response with supervised learning ([linear regression](linear_regression.ipynb), [MLP](MLP_prototype.ipynb))
 
 The framework and the theory around this research subject are actually very well defined and I will add a presentation in the coming months.
