@@ -1,0 +1,6 @@
+images
+__pycache__/AbstractMicrostructure.cpython-310.pyc
+__pycache__/MixedMicrostructure.cpython-310.pyc
+__pycache__/FileManager.cpython-310.pyc
+micro_ids_sorted.txt
+micro_ids.txt

@@ -6,7 +6,8 @@ import sys
 
 from vispy import app, visuals, scene, gloo
 from vispy.color import ColorArray
-
+from FileManager import FileManager
+fM = FileManager()
 
 # Define a simple vertex shader. We use $template variables as placeholders for
 # code that will be inserted later on.
@@ -16,6 +17,7 @@ void main()
     vec4 visual_pos = vec4($position, 1);
     vec4 doc_pos = $visual_to_doc(visual_pos);
     gl_Position = $doc_to_render(doc_pos);
+    gl_PointSize = 4;
 }
 """
 
@@ -62,13 +64,15 @@ class Plot3DVisual(visuals.Visual):
 canvas = scene.SceneCanvas(keys='interactive', show=True)
 
 # Add a ViewBox to let the user zoom/rotate
-view = canvas.central_widget.add_view()
+view = canvas.central_widget.add_view(bgcolor=(1,1,1))
 view.camera="turntable"
 view.camera.fov = 45
 #view.camera.scale_factor = 50
-
-micro = np.load("/home/vludvig/nas/stage/python/clustering_v1/microstructures/experiment2/test_4_6/npy/microtest_4_6.npy")
+id_micro = "3_100_1e-05_50_3_4"
+micro = np.load(fM._get_path_npy_image(id_micro))
 Nx,Ny,Nz = micro.shape
+print('dimensions = ', micro.shape)
+print("micro.shape = ", micro.shape)
 view.camera.center = (Nx/2, Ny/2, Nz/2)
 view.camera.distance = max(Nz, max(Nx, Ny))
 
