@@ -1,6 +1,8 @@
 ## Overview
 This repository deals with mechanical simulations of Soil-Mixing materials and was done during my research internship at the [Centre for Mathematical Morphology (CMM)](https://www.cmm.minesparis.psl.eu/en/home/), in collaboration with [Université Gustave Eiffel](https://www.univ-gustave-eiffel.fr/). I generated a database of a few thousands of heterogeneous microstructures represented as point cloud 3D images and then predicted the elasticity threshold with supervised learning. The main result is that with the Mohr-Coulomb criterion the (highly non linear) elasticity threshold can be predicted with the elasticity matrix, and more substantially that the prediction is increased when more coefficients of the elasticity matrix are taken as features. A detailed, easy to understand report that explains the theoretical framework is available [here](report/internship_report.pdf).
 
+__Seminar presentation__: [maiitech.pdf](https://github.com/0vl0/microstructure-simulation-3D/blob/main/seminar/maiitech.pdf).
+
 Here is a short overview of what you can do with this repository: 
   * generate a dataset of 3D voxel microstructures and compute a mechanical response ([FileManager.py](FileManager.py), [generate_db_micro.py](generate_db_micro.py)).
   * 3D plot the microstructures, leveraging the GPU with [vispy](https://vispy.org/) ([plot_2_micro_lines.py](plot_2_micro_lines.py), [plot_2_shapes_microstructure.py](plot_2_shapes_microstructure.py))
